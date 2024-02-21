@@ -1,0 +1,32 @@
+.rating_container {
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+    background: red;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_rating {
+    font-size: 20px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.btn_rating svg {
+    transition: all .5s;
+    cursor: pointer;
+}
+
+[active-lk = 'true'] {
+    color: rgb(15, 175, 0);
+}
+
+.btn_rating svg:hover {
+    color: beige;
+}
+
+.rating_num {
+    margin: 3px;
+}
