@@ -1,0 +1,481 @@
+:root{
+--pumpkin-50: #fff9ec;
+--pumpkin-100: #fff2d3;
+--pumpkin-200: #ffe1a5;
+--pumpkin-300: #ffca6d;
+--pumpkin-400: #ffa732;
+--pumpkin-500: #ff8c0a;
+--pumpkin-600: #ff7300;
+--pumpkin-700: #cc5302;
+--pumpkin-800: #a1400b;
+--pumpkin-900: #82370c;
+--pumpkin-950: #461904;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}
+body,html{
+    background-color: #f2f2f2;
+}
+
+body{
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin: 20px 10px;
+}
+li {
+    all: initial;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    all: initial;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+  
+  }
+  
+  .search-container i {
+    margin: 0 10px;
+    color: #999;
+    cursor: pointer;
+   
+  }
+
+  .fade-out {
+    animation: fadeOutLeft 0.1s ease forwards;
+  }
+  @keyframes fadeOutLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.1s ease forwards;
+  }
+
+  .search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .search-container input::placeholder {
+    color: #999;
+  }
+
+  .menu-content {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Cambiamos el valor de -200px a -100% */
+    width: 100%; /* Cambiamos el valor de 200px a 100% */
+    height: 100vh;
+    transition: left 0.3s ease;
+    background-color: rgba(194, 194, 194, 0.5); /* Cambia el valor del color a tu preferencia y ajusta la opacidad */
+    backdrop-filter: blur(2px); /* Ajusta el valor de desenfoque según tus necesidades */
+  }
+  
+
+  .menu-content.active {
+    left: 0;
+  }
+
+
+  .menu-items{
+    top: 0;
+    left: -200px;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    padding: 15px;
+    
+}
+  .close-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .close-btn i {
+    font-size: 24px;
+    color: #999;
+  }
+  
+  .menu-content.active {
+    left: 0;
+  }
+
+  .menu-items ul {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+.menu-items ul > li {
+  display: flex;
+  gap: 20px;
+  padding: 7px;
+  margin: 5px;
+}
+
+  .menu-items ul > li:hover {
+    color: var(--pumpkin-700)
+  }
+
+  .menu-items ul > li > a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: -3.5px;
+  }
+
+  .logo{
+    width: 150px;
+  }
+
+  /* Body posts */
+  .body{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .post-principal-container {
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-principal-container img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .post-principal-container h3, .post-principal-container p {
+  padding: 10px;
+  margin: 0;
+  white-space: normal; /* Mostrar saltos de línea */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+  
+  .post-principal-containerh3 {
+    font-size: 20px;
+  }
+  
+  .post-principal-container p {
+    font-size: 16px;
+  }
+                                /*              carrusel                */
+                                .carousel{
+                                  width: 100%;
+                                  height: 300px;
+                                
+                                }
+
+                                .carousel-container {
+                                  position: relative;
+                                  width: 100%;
+                                  height: 100%;
+                                  
+                                }
+                                
+                                .carousel-item {
+                                  display: none;
+                                  position: relative;
+                                  top: 0;
+                                  left: 0;
+                                  width: 100%;
+                                  height: 100%;
+                                  
+                                }
+                                
+                                .carousel-item.active {
+                                  display: block;
+                                }
+                                
+                                .carousel-item img {
+                                  width: 100%;
+                                  height: 100%;
+                                  max-height: 100%;
+                                  object-fit: cover;
+                                  border-radius: 10px;
+                                }
+                                
+                                .carousel-item .text-container {
+                                  display: flex;
+                                  flex-direction: column;
+                                  align-content: flex-start;
+                                  width: 60%;
+                                  gap: 20px;
+                                  color: white;
+                                  position: absolute;
+                                  bottom: 30%;
+                                  left: 20px;
+                                  /* transform: translate(-50%, 50%); */
+                                  padding: 10px;
+                                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                                  }
+                                  .dots-container {
+                                    position: absolute;
+                                    bottom: 20px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                  }
+                                  
+                                  .dot {
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: #ccc;
+                                    border-radius: 50%;
+                                    margin: 0 5px;
+                                    cursor: pointer;
+                                    position: relative;
+                                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                                    transition: transform 0.3s ease;
+                                  }
+                                  
+                                  .dot.active {
+                                    background-color: #333;
+                                    transform: scale(1.2);
+                                  }
+                                
+                                /* Estilos para hacer el carrusel responsive */
+                                
+
+  /* blog */
+  .blog-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+  }
+  
+  .blog-card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+  }
+  
+  .blog-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .blog-card h3 {
+    font-size: 14px;
+    padding: 10px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .blog-card .tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .blog-card .tags ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .blog-card .tags li {
+    font-size: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: var(--pumpkin-200);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 300;
+  }
+  
+  .blog-card .tags li:hover {
+    background-color: var(--pumpkin-500);
+    color: white;
+  }
+
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--pumpkin-700);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .btn-carusel {
+    border-radius: 5px 0 0 5px;
+    max-width:150px;
+  }
+  .btn-carusel::after {
+    content: ">";
+    position: absolute;
+    top: 0;
+    right: -22px;
+    width: 15px;
+    height: 100%;
+    background-color: var(--pumpkin-700);
+    font-size: 24px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn-carusel:hover::after {
+    background-color: transparent;
+    color: var(--pumpkin-700);
+   top: -1px;
+    height: 98%;
+    border: 2px solid var(--pumpkin-700);
+  }
+  .button:hover {
+    background-color: transparent;
+    color: var(--pumpkin-700);
+    border: 2px solid var(--pumpkin-700);
+    box-shadow: 0 0 10px var(--pumpkin-700);
+    transform: scale(1.1);
+  }
+  
+  .button:active {
+    background-color: var(--pumpkin-700);
+    color: white;
+    border: none;
+    box-shadow: none;
+    transform: scale(1);
+  }
+  
+  .btn-menu{
+    width: 100%;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .button:hover {
+    animation: pulse 1s infinite;
+  }
+
+
+@media (min-width: 992px) {
+  body{
+    flex-direction: row;
+    max-width: 1200px;
+  }
+  .menu-content {
+
+    position: relative;
+
+    left: 0%; /* Cambiamos el valor de -200px a -100% */
+    width: 300px; /* Cambiamos el valor de 200px a 100% */
+    height: 500px;
+    background-color: transparent; /* Cambia el valor del color a tu preferencia y ajusta la opacidad */
+    backdrop-filter: none; /* Ajusta el valor de desenfoque según tus necesidades */
+
+   }
+
+  .menu-items{
+    height: auto;
+    border-radius: 10px;
+  }
+  .close-btn, .menu {
+    display: none;
+  }
+  .blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    
+    margin: 0 auto;
+  }
+
+
+}
