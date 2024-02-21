@@ -369,79 +369,27 @@ li {
 
 
   .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--pumpkin-700);
+    background-color: var(--pumpkin-500);
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
     font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
     cursor: pointer;
-  }
-
-  .btn-carusel {
-    border-radius: 5px 0 0 5px;
-    max-width:150px;
-  }
-  .btn-carusel::after {
-    content: ">";
-    position: absolute;
-    top: 0;
-    right: -22px;
-    width: 15px;
-    height: 100%;
-    background-color: var(--pumpkin-700);
-    font-size: 24px;
-    border-radius: 0 5px 5px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s ease;
   }
   
-  .btn-carusel:hover::after {
-    background-color: transparent;
-    color: var(--pumpkin-700);
-   top: -1px;
-    height: 98%;
-    border: 2px solid var(--pumpkin-700);
-  }
   .button:hover {
-    background-color: transparent;
-    color: var(--pumpkin-700);
-    border: 2px solid var(--pumpkin-700);
-    box-shadow: 0 0 10px var(--pumpkin-700);
-    transform: scale(1.1);
+    background-color: var(--pumpkin-600);
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--pumpkin-300);
   }
   
   .button:active {
     background-color: var(--pumpkin-700);
-    color: white;
-    border: none;
-    box-shadow: none;
-    transform: scale(1);
-  }
-  
-  .btn-menu{
-    width: 100%;
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  .button:hover {
-    animation: pulse 1s infinite;
   }
 
 
