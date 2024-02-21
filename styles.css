@@ -392,6 +392,14 @@ li {
     background-color: var(--pumpkin-700);
   }
 
+  
+.btn-menu{
+  width: 100%;
+}
+
+.btn-carusel {
+  max-width:150px;
+}
 
 @media (min-width: 992px) {
   body{
