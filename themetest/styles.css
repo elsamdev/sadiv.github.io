@@ -34,9 +34,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-
   margin: 20px 10px;
 }
+
 li {
   list-style-type: none;
   margin: 0;
@@ -126,6 +126,8 @@ a {
     2px
   ); /* Ajusta el valor de desenfoque según tus necesidades */
 }
+
+
 
 .menu-content.active {
   left: 0;
@@ -445,13 +447,14 @@ a {
     max-width: 1200px;
   }
   .menu-content {
-    position: relative;
-
+    position: sticky;
+    top: 20px;
     left: 0%; /* Cambiamos el valor de -200px a -100% */
     width: 300px; /* Cambiamos el valor de 200px a 100% */
     height: 500px;
     background-color: transparent; /* Cambia el valor del color a tu preferencia y ajusta la opacidad */
     backdrop-filter: none; /* Ajusta el valor de desenfoque según tus necesidades */
+    margin: 20px 10px;
   }
 
   .menu-items {
