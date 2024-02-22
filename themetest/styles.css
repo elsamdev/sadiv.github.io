@@ -321,14 +321,20 @@ li {
     object-fit: cover;
   }
   
-  .post-principal-container-titulo {
+  .blog-card .post-principal-container-titulo {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px;
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
   }
   
   .blog-card:hover img {
