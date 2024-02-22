@@ -334,7 +334,7 @@ a {
   width: 100%;
   padding: 20px;
   color: white;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0 0 0 / 64%));
+  background: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 64%));
   overflow: hidden;
   max-height: 80px;
   text-overflow: ellipsis;
