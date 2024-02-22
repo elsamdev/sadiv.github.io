@@ -63,22 +63,6 @@ menuBtn.addEventListener('click', function() {
   });
 
 
-  ///// limite de letras en titulos y cuerpos
-const titleElement = document.querySelector('.post-principal-container-titulo');
-//const descriptionElement = document.querySelector('.post-principal-container-desc');
-const titleLimit = 80; // Límite de caracteres para el título
-const descriptionLimit = 200; // Límite de caracteres para la descripción
-
-titleElement.textContent = truncateText(titleElement.textContent, titleLimit);
-//descriptionElement.textContent = truncateText(descriptionElement.textContent, descriptionLimit);
-
-function truncateText(text, limit) {
-  if (text.length > limit) {
-    return text.slice(0, limit) + '...';;
-  }
-  return text;
-}
-
 //carrusel
 
 
