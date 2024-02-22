@@ -359,6 +359,12 @@ a {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  transform: translateX(250px);
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .7s;
+}
+
+.blog-card .tags:hover {
+  transform: translateX(0);
 }
 
 .blog-card .tags ul {
