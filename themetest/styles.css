@@ -57,11 +57,11 @@ li {
     background-color: white;
     padding: 10px;
     border-radius: 5px;
-  
+    width: 100%;
   }
   
   .search-container i {
-    margin: 0 10px;
+    margin: .3rem;
     color: #999;
     cursor: pointer;
    
@@ -103,6 +103,7 @@ li {
     background-color: transparent;
     font-size: 18px;
     color: #333;
+    width: 100%;
   }
   
   .search-container input::placeholder {
