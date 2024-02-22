@@ -340,6 +340,10 @@ li {
     white-space: normal;
   }
   
+  .blog-card .post-principal-container-titulo:hover {
+    color: var(--pumpkin-700);
+
+  }
   .blog-card:hover img {
     transform: scale(1.1);
   }
