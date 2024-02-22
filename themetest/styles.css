@@ -313,6 +313,8 @@ li {
     height: 295px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   
   .blog-card img {
@@ -351,34 +353,29 @@ li {
   }
   
   .blog-card .tags {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
     flex-wrap: wrap;
   }
   
   .blog-card .tags ul {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
   
   .blog-card .tags li {
-    font-size: 12px;
     margin-right: 10px;
-    margin-bottom: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
     padding: 5px 10px;
-    background-color: var(--pumpkin-200);
-    border-radius: 20px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 300;
   }
-  
   .blog-card .tags li:hover {
     background-color: var(--pumpkin-500);
     color: white;
