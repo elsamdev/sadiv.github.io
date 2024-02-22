@@ -355,18 +355,38 @@ a {
 .blog-card .tags {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  transform: translateX(250px);
-  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .7s;
+  transform: translateX(180px);
+  /* transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .7s; */
+ 
 }
 
 .blog-card:hover .tags {
-  transform: translateX(0);
+  animation: tagges 8s linear infinite;
+  
 }
 
+
+
+
+@keyframes tagges {
+  0% {
+    transform: translateX(180px);
+  }
+  10% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}
+
+.blog-card .tags:hover {
+  animation-play-state: paused;
+}
 .blog-card .tags ul {
   display: flex;
   list-style: none;
