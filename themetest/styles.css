@@ -361,6 +361,7 @@ a {
   left: 0;
   margin-top: 10px;
   display: flex;
+  display: none;
   flex-wrap: wrap;
   transform: translateX(180px);
   /* transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .7s; */
@@ -410,6 +411,10 @@ a {
   color: white;
 }
 
+.more-tags{
+  position: absolute;
+  right: 0;
+}
 .button {
   background-color: var(--pumpkin-500);
   color: white;
