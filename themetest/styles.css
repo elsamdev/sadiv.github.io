@@ -349,7 +349,6 @@ a {
 
   } */
 .blog-card:hover img {
-  transition: ease .5s;
   transform: scale(1.1);
 }
 
