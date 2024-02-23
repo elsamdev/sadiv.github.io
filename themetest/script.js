@@ -62,13 +62,13 @@ menuBtn.addEventListener('click', function() {
     }
   });
 
-  document.querySelector(".more-tags").addEventListener("click", function() {
-    var ds = document.querySelector(".modal");
-    ds.classList.add("showmodal");
-    document.querySelector(".CloseViewB").addEventListener("click", function() {
-      ds.classList.remove("showmodal");
-    });
-  });
+  // document.querySelector(".more-tags").addEventListener("click", function() {
+  //   var ds = document.querySelector(".modal");
+  //   ds.classList.add("showmodal");
+  //   document.querySelector(".CloseViewB").addEventListener("click", function() {
+  //     ds.classList.remove("showmodal");
+  //   });
+  // });
 
 //carrusel
 
@@ -125,3 +125,74 @@ document.addEventListener("DOMContentLoaded", function() {
   startInterval();
 });
 
+const moreTagsIcons = document.querySelectorAll('.more-tags');
+const tagsContainers = document.querySelectorAll('.tags');
+const titles = document.querySelectorAll('.blog-card .post-principal-container-titulo');
+const imgCard = document.querySelectorAll('.blog-card img');
+moreTagsIcons.forEach((icon, index) => {
+  
+  icon.addEventListener('click', () => {
+    tagsContainers[index].classList.toggle('show-tags');
+    titles[index].classList.toggle('show-tittle');
+    imgCard[index].classList.toggle('blog-card-brightness');
+  });
+});
+
+
+
+
+//// paginacion 
+
+
+// Obtén todas las cards y la paginación
+const cards = document.querySelectorAll('.blog-card');
+const pagination = document.querySelector('.pagination');
+
+// Número de cards por página
+const cardsPerPage = 2;
+
+// Calcula el número total de páginas
+const totalPages = Math.ceil(cards.length / cardsPerPage);
+console.log(totalPages);
+// Función para mostrar las cards de la página actual
+function showPage(page) {
+  // Calcula el índice inicial y final de las cards a mostrar
+  const startIndex = (page - 1) * cardsPerPage;
+  const endIndex = page * cardsPerPage;
+
+  // Recorre todas las cards y muestra u oculta según la página actual
+  cards.forEach((card, index) => {
+    if (index >= startIndex && index < endIndex) {
+      card.classList.remove('hide');
+    } else {
+      card.classList.add('hide');
+    }
+  });
+}
+
+// Muestra la primera página al cargar la página
+showPage(1);
+
+// Agrega eventos de clic a los enlaces de paginación
+const previousLink = document.querySelector('.previous');
+const nextLink = document.querySelector('.next');
+
+previousLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  const currentPage = parseInt(pagination.dataset.page);
+  if (currentPage > 1) {
+
+    pagination.dataset.page = currentPage - 1;
+    showPage(currentPage - 1);
+  }
+});
+
+nextLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  const currentPage = 1;
+  console.log(currentPage)
+  if (currentPage < totalPages) {
+    pagination.dataset.page = currentPage + 1;
+    showPage(currentPage + 1);
+  }
+});
