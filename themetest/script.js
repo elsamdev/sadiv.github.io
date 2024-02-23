@@ -132,7 +132,8 @@ const imgCard = document.querySelectorAll('.blog-card img');
   
   moreTagsIcons.forEach((icon, index) => {
     
-    icon.addEventListener('click', () => {
+    icon.addEventListener('click', (e) => {
+      e.preventDefault();
       if (tagsContainers[index].classList.contains('show-tags')) {
         deleteClassTag();
       }else {

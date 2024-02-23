@@ -537,3 +537,22 @@ a {
 .hide {
   display: none;
 }
+/* menu derecho */
+.menu-content-right{
+  position: block;
+  display: flex;
+  top: 0;
+  left: -150%; /* Cambiamos el valor de -200px a -100% */
+  width: 200px; /* Cambiamos el valor de 200px a 100% */
+  height: 100vh;
+  transition: left 0.5s ease;
+  background-color: rgba(
+    194,
+    194,
+    194,
+    0.5
+  ); /* Cambia el valor del color a tu preferencia y ajusta la opacidad */
+  backdrop-filter: blur(
+    2px
+  ); /* Ajusta el valor de desenfoque según tus necesidades */
+}
