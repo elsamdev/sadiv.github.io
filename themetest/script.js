@@ -143,10 +143,10 @@ moreTagsIcons.forEach((icon, index) => {
 
 //// paginacion 
 
-
 // Obtén todas las cards y la paginación
 const cards = document.querySelectorAll('.blog-card');
 const pagination = document.querySelector('.pagination');
+const pagesContainer = document.querySelector('.pages');
 
 // Número de cards por página
 const cardsPerPage = 2;
@@ -174,8 +174,33 @@ function showPage(page) {
   });
 }
 
-// Muestra la página actual al cargar la página
+// Función para generar los números de página y agregar eventos de clic
+function generatePageNumbers() {
+  pagesContainer.innerHTML = '';
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageLink = document.createElement('a');
+    pageLink.href = '#';
+    pageLink.textContent = i;
+    pageLink.classList.add('page');
+
+    if (i === currentPage) {
+      pageLink.classList.add('active');
+    }
+
+    pageLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      const newPage = parseInt(this.textContent);
+      updatePageParam(newPage);
+    });
+
+    pagesContainer.appendChild(pageLink);
+  }
+}
+
+// Muestra la página actual al cargar la página y genera los números de página
 showPage(currentPage);
+generatePageNumbers();
 
 // Actualiza el valor del parámetro de página en la URL y recarga la página al hacer clic en los enlaces de paginación
 const previousLink = document.querySelector('.previous');

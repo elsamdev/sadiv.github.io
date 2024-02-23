@@ -488,8 +488,13 @@ a {
 
 .pagination {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
   margin-top: 20px;
+  width: 100%;
+ 
 }
 
 .pagination a {
@@ -503,6 +508,16 @@ a {
 
 .pagination a:hover {
   background-color: #dddddd;
+}
+
+.pages .page {
+  color: #333333;
+}
+
+.pages .page.active {
+  color: white; 
+  font-weight: bold;
+  background-color: var(--pumpkin-500);
 }
 
 .hide {
