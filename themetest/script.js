@@ -1,35 +1,34 @@
 const searchInput = document.getElementById('search-input');
-const searchIcon = document.querySelector('.fa-search');
+const searchIcon = document.querySelector('.icon-burger-search');
 const menuBtn = document.querySelector('.menu');
 const menuContent = document.querySelector('.menu-content');
 const closeBtn = document.querySelector('.close-btn');
 searchInput.addEventListener('focus', function() {
   searchIcon.classList.add('fade-out');
   if (searchInput.value === '') {
-    fade('fa-search', 'fa-times')
+    fade('icon-burger-search', 'icon-burger-close')
   }else{
     searchIcon.className = '';
-    searchIcon.classList.add('fas');
-    searchIcon.classList.add('fa-times');
+    searchIcon.classList.add('icon-burger-close');
   }
 });
 
 searchInput.addEventListener('blur', function() {
   if (searchInput.value === '') {
-    fade('fa-times', 'fa-search')
+    fade('icon-burger-close', 'icon-burger-search')
   }
   
 });
 
 searchInput.addEventListener('input', function() {
   if (searchInput.value === '') {
-    fade('fa-times', 'fa-search')
+    fade('icon-burger-close', 'icon-burger-search')
   }
 });
 
 searchIcon.addEventListener('click', function() {
-  if (searchIcon.classList.contains('fa-times')) {
-    fade('fa-times', 'fa-search');
+  if (searchIcon.classList.contains('icon-burger-close')) {
+    fade('icon-burger-close', 'icon-burger-search');
     searchInput.value = '';
   }
 });

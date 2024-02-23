@@ -53,9 +53,15 @@ a {
   display: flex;
   align-items: center;
   background-color: white;
-  padding: 10px;
+  padding: 7px;
   border-radius: 5px;
   width: 100%;
+ 
+}
+
+#search-input{
+  color: #999;
+
 }
 
 .search-container i {
@@ -406,14 +412,16 @@ a {
   display: block;
 }
 .more-tags {
-  z-index: 2;
-  position: absolute;
-  right: 0;
-  margin: 7px;
-  background: rgba(0, 0, 0, 0.3);
-  font-size: 25px;
-  border-radius: 4px;
-  transition: ease 1s;
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	margin: 7px;
+	height: 31px;
+	color: white;
+	background: rgba(0, 0, 0, 0.3);
+	font-size: 25px;
+	border-radius: 4px;
+	transition: ease 1s;
 }
 
 .more-tags:hover {
