@@ -132,8 +132,8 @@ const imgCard = document.querySelectorAll('.blog-card img');
 
   
   moreTagsIcons.forEach((icon, index) => {
+    
     icon.addEventListener('click', () => {
-
       if (tagsContainers[index].classList.contains('show-tags')) {
         deleteClassTag();
       }else {
@@ -142,9 +142,6 @@ const imgCard = document.querySelectorAll('.blog-card img');
         titles[index].classList.toggle('show-tittle');
         imgCard[index].classList.toggle('blog-card-brightness');
       }
-      
-
-
     });
   
     icon.addEventListener('blur', () => {
