@@ -520,6 +520,13 @@ a {
   background-color: var(--pumpkin-500);
 }
 
+.bbtns a.active{
+  color: #949393;
+}
+
+.bbtns a.active {
+  background-color: transparent;
+}
 .hide {
   display: none;
 }

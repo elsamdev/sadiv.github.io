@@ -161,6 +161,12 @@ const totalPages = Math.ceil(cards.length / cardsPerPage);
 // Función para mostrar las cards de la página actual
 function showPage(page) {
   // Calcula el índice inicial y final de las cards a mostrar
+  console.log(page+ " " +totalPages)
+  if(page == 1){
+    previousLink.classList.add('active');
+  }else if(page == totalPages ){
+    nextLink.classList.add('active');
+  }
   const startIndex = (page - 1) * cardsPerPage;
   const endIndex = page * cardsPerPage;
 
@@ -173,6 +179,8 @@ function showPage(page) {
     }
   });
 }
+const previousLink = document.querySelector('.previous');
+const nextLink = document.querySelector('.next');
 
 // Función para generar los números de página y agregar eventos de clic
 function generatePageNumbers() {
@@ -187,6 +195,8 @@ function generatePageNumbers() {
     if (i === currentPage) {
       pageLink.classList.add('active');
     }
+
+    
 
     pageLink.addEventListener('click', function(e) {
       e.preventDefault();
@@ -203,8 +213,6 @@ showPage(currentPage);
 generatePageNumbers();
 
 // Actualiza el valor del parámetro de página en la URL y recarga la página al hacer clic en los enlaces de paginación
-const previousLink = document.querySelector('.previous');
-const nextLink = document.querySelector('.next');
 
 previousLink.addEventListener('click', function(e) {
   e.preventDefault();
@@ -224,6 +232,7 @@ nextLink.addEventListener('click', function(e) {
 
 // Función para actualizar el valor del parámetro de página en la URL y recargar la página
 function updatePageParam(page) {
+
   const url = new URL(window.location.href);
   url.searchParams.set('page', page);
   window.location.href = url;
