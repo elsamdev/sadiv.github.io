@@ -10,6 +10,9 @@
   --pumpkin-800: #a1400b;
   --pumpkin-900: #82370c;
   --pumpkin-950: #461904;
+  --background-light: #f2f2f2;
+  --primary-color: white;
+  --text-primary-color: white;
 }
 
 * {
@@ -20,7 +23,7 @@
 }
 body,
 html {
-  background-color: #f2f2f2;
+  background-color: var(--background-light);
   scroll-behavior: smooth;
 }
 
@@ -52,7 +55,7 @@ a {
 .search-container {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 7px;
   border-radius: 5px;
   width: 100%;
@@ -142,7 +145,7 @@ a {
   left: -200px;
   width: 300px;
   height: 100vh;
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 15px;
   padding-left: 30px;
 }
@@ -204,7 +207,7 @@ a {
   max-width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -269,7 +272,7 @@ a {
   align-content: flex-start;
   width: 60%;
   gap: 20px;
-  color: white;
+  color: var(--text-primary-color);
   position: absolute;
   bottom: 30%;
   left: 20px;
@@ -347,7 +350,7 @@ a {
   left: 0;
   width: 100%;
   padding: 20px;
-  color: white;
+  color: var(--text-primary-color);
   background: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 64%));
   overflow: hidden;
   max-height: 80px;
@@ -417,7 +420,7 @@ a {
 	right: 0;
 	margin: 7px;
 	height: 31px;
-	color: white;
+  color: var(--text-primary-color);
 	background: rgba(0, 0, 0, 0.3);
 	font-size: 25px;
 	border-radius: 4px;
@@ -429,7 +432,7 @@ a {
 }
 .button {
   background-color: var(--pumpkin-500);
-  color: white;
+  color: var(--text-primary-color);
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
@@ -522,7 +525,7 @@ a {
 }
 
 .pages .page.active {
-  color: white; 
+  color: var(--text-primary-color); 
   font-weight: bold;
   background-color: var(--pumpkin-500);
 }
