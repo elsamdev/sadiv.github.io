@@ -62,6 +62,13 @@ menuBtn.addEventListener('click', function() {
     }
   });
 
+  document.querySelector(".more-tags").addEventListener("click", function() {
+    var ds = document.querySelector(".modal");
+    ds.classList.add("showmodal");
+    document.querySelector(".CloseViewB").addEventListener("click", function() {
+      ds.classList.remove("showmodal");
+    });
+  });
 
 //carrusel
 
