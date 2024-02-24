@@ -271,3 +271,43 @@ function updatePageParam(page) {
   url.searchParams.set('page', page);
   window.location.href = url;
 }
+
+
+// modo noche
+
+
+var modoNocheBtn = document.getElementById("modoNocheBtn");
+var body = document.body;
+var html = document.documentElement;
+var menuItems = document.getElementsByClassName("menu-items");
+var searcItems = document.getElementsByClassName("search-container")
+// Verificar el estado del modo noche en el almacenamiento local
+var modoNocheActivado = localStorage.getItem("modoNocheActivado");
+
+// Si existe un estado guardado, aplicar el modo noche
+if (modoNocheActivado === "true") {
+  for (var i = 0; i < menuItems.length; i++) {
+    menuItems[i].classList.add("modoNoche-secundario");
+    
+  }
+  for (var i = 0; i < searcItems.length; i++) {
+    searcItems[i].classList.toggle("modoNoche-secundario");
+  }
+    body.classList.toggle("modoNoche");
+    html.classList.toggle("modoNoche");
+}
+
+modoNocheBtn.addEventListener("click", function() {
+  // Alternar la clase y guardar el estado en el almacenamiento local
+  html.classList.toggle("modoNoche");
+  body.classList.toggle("modoNoche");
+  modoNocheActivado = body.classList.contains("modoNoche");
+  for (var i = 0; i < menuItems.length; i++) {
+    menuItems[i].classList.toggle("modoNoche-secundario");
+  }
+
+  for (var i = 0; i < searcItems.length; i++) {
+    searcItems[i].classList.toggle("modoNoche-secundario");
+  }
+  localStorage.setItem("modoNocheActivado", modoNocheActivado);
+});

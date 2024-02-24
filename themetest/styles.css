@@ -11,8 +11,11 @@
   --pumpkin-900: #82370c;
   --pumpkin-950: #461904;
   --background-light: #f2f2f2;
+  --background-dark: #252525;
   --primary-color: white;
+  --primary-color-dark: #121212;
   --text-primary-color: white;
+
 }
 
 * {
@@ -33,6 +36,9 @@ body {
   flex-direction: column;
   margin: 0 auto;
 }
+
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -559,3 +565,14 @@ a {
     2px
   ); /* Ajusta el valor de desenfoque según tus necesidades */
 }
+
+
+.modoNoche {
+   background-color: var(--background-dark);
+}
+
+.modoNoche-secundario {
+  background-color: var(--primary-color-dark);
+  color: var(--text-primary-color);
+}
+
