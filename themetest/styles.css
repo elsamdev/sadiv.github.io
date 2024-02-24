@@ -577,9 +577,10 @@ a {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: -35px;
+  top: 0px;
   right: 0;
   background-color: transparent;
   border: 0 ;
+  margin: 20px;
 }
 
