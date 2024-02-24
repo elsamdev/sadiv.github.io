@@ -183,7 +183,7 @@ const pagination = document.querySelector('.pagination');
 const pagesContainer = document.querySelector('.pages');
 
 // Número de cards por página
-const cardsPerPage = 2;
+const cardsPerPage = 3;
 
 // Obtiene el valor del parámetro de página de la URL
 const urlParams = new URLSearchParams(window.location.search);
