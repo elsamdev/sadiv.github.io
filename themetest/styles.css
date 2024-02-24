@@ -298,6 +298,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); 
+  padding: 10px;
+  border:  1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
 }
 
 .dot {
@@ -473,40 +477,6 @@ a {
   max-width: 150px;
 }
 
-@media (min-width: 992px) {
-  body {
-    flex-direction: row;
-    max-width: 1200px;
-  }
-  .menu-content {
-    position: sticky;
-    top: 20px;
-    left: 0%; /* Cambiamos el valor de -200px a -100% */
-    width: 300px; /* Cambiamos el valor de 200px a 100% */
-    height: 500px;
-    background-color: transparent; /* Cambia el valor del color a tu preferencia y ajusta la opacidad */
-    backdrop-filter: none; /* Ajusta el valor de desenfoque según tus necesidades */
-    margin: 20px 10px;
-  }
-
-  .menu-items {
-    height: auto;
-    border-radius: 10px;
-  }
-  .close-btn,
-  .menu {
-    display: none;
-  }
-  .blog-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    margin: 0 auto;
-  }
-}
-
-
 .pagination {
   display: flex;
   flex-direction: column;
@@ -572,15 +542,54 @@ a {
 
 
 
-
+.modonoche{
+  position: absolute;
+}
 #modoNocheBtn{
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 0px;
-  right: 0;
+  top: 15px;
+  left: 260px;
   background-color: transparent;
   border: 0 ;
-  margin: 20px;
+cursor: pointer;
 }
+
+@media (min-width: 992px) {
+  body {
+    flex-direction: row;
+    max-width: 1200px;
+  }
+  .menu-content {
+    position: sticky;
+    top: 20px;
+    left: 0%; /* Cambiamos el valor de -200px a -100% */
+    width: 300px; /* Cambiamos el valor de 200px a 100% */
+    height: 500px;
+    background-color: transparent; /* Cambia el valor del color a tu preferencia y ajusta la opacidad */
+    backdrop-filter: none; /* Ajusta el valor de desenfoque según tus necesidades */
+    margin: 20px 10px;
+  }
+
+  .menu-items {
+    height: auto;
+    border-radius: 10px;
+  }
+  .close-btn,
+  .menu {
+    display: none;
+  }
+  .blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    margin: 0 auto;
+  }
+
+
+}
+
+
 
