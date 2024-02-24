@@ -246,6 +246,7 @@ a {
 .carousel {
   width: 100%;
   height: 300px;
+  
 }
 
 .carousel-container {
@@ -325,6 +326,7 @@ a {
   gap: 20px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
 }
 
 .blog-card {
@@ -571,5 +573,13 @@ a {
 
 
 
-
+#modoNocheBtn{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -35px;
+  right: 0;
+  background-color: transparent;
+  border: 0 ;
+}
 
