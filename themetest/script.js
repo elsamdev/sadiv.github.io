@@ -1,3 +1,46 @@
+
+// modo noche
+
+var modoNocheBtn = document.getElementById("modoNocheBtn");
+var modoNocheBtnIcon = document.getElementsByClassName("mdnicon")[0];
+// Verificar el estado del modo noche en el almacenamiento local
+var modoNocheActivado = localStorage.getItem("modoNocheActivado");
+
+// Si existe un estado guardado, aplicar el modo noche
+if (modoNocheActivado === "true") {
+  document.documentElement.style.setProperty('--background', '#252525');
+  document.documentElement.style.setProperty('--text-secondary-color', 'white');
+  document.documentElement.style.setProperty('--primary-color', '#121212');
+  document.documentElement.style.setProperty('--pagination-active-text', 'white');
+  modoNocheBtnIcon.classList.replace("icon-moon", "icon-moon-disable");
+} else {
+  localStorage.removeItem("modoNocheActivado");
+}
+
+modoNocheBtn.addEventListener("click", function() {
+  // Alternar la clase y guardar el estado en el almacenamiento local
+  if (modoNocheActivado === "true") {
+    document.documentElement.style.setProperty('--background', null);
+    document.documentElement.style.setProperty('--text-secondary-color', null);
+    document.documentElement.style.setProperty('--primary-color', null);
+    document.documentElement.style.setProperty('--pagination-active-text', null);
+    modoNocheBtnIcon.classList.replace("icon-moon-disable", "icon-moon");
+    modoNocheActivado = "false";
+    localStorage.removeItem("modoNocheActivado");
+  } else {
+    document.documentElement.style.setProperty('--background', '#252525');
+    document.documentElement.style.setProperty('--text-secondary-color', 'white');
+    document.documentElement.style.setProperty('--primary-color', '#121212');
+    document.documentElement.style.setProperty('--pagination-active-text', 'white');
+    modoNocheBtnIcon.classList.replace("icon-moon", "icon-moon-disable");
+    modoNocheActivado = "true";
+    localStorage.setItem("modoNocheActivado", modoNocheActivado);
+  }
+});
+
+
+//////////////fin modo noche
+
 const searchInput = document.getElementById('search-input');
 const searchIcon = document.querySelector('.icon-burger-search');
 const menuBtn = document.querySelector('.menu');
@@ -273,43 +316,5 @@ function updatePageParam(page) {
 }
 
 
-// modo noche
-
-var modoNocheBtn = document.getElementById("modoNocheBtn");
-var modoNocheBtnIcon = document.getElementsByClassName("mdnicon")[0];
-// Verificar el estado del modo noche en el almacenamiento local
-var modoNocheActivado = localStorage.getItem("modoNocheActivado");
-
-// Si existe un estado guardado, aplicar el modo noche
-if (modoNocheActivado === "true") {
-  document.documentElement.style.setProperty('--background', '#252525');
-  document.documentElement.style.setProperty('--text-secondary-color', 'white');
-  document.documentElement.style.setProperty('--primary-color', '#121212');
-  document.documentElement.style.setProperty('--pagination-active-text', 'white');
-  modoNocheBtnIcon.classList.replace("icon-moon", "icon-moon-disable");
-} else {
-  localStorage.removeItem("modoNocheActivado");
-}
-
-modoNocheBtn.addEventListener("click", function() {
-  // Alternar la clase y guardar el estado en el almacenamiento local
-  if (modoNocheActivado === "true") {
-    document.documentElement.style.setProperty('--background', null);
-    document.documentElement.style.setProperty('--text-secondary-color', null);
-    document.documentElement.style.setProperty('--primary-color', null);
-    document.documentElement.style.setProperty('--pagination-active-text', null);
-    modoNocheBtnIcon.classList.replace("icon-moon-disable", "icon-moon");
-    modoNocheActivado = "false";
-    localStorage.removeItem("modoNocheActivado");
-  } else {
-    document.documentElement.style.setProperty('--background', '#252525');
-    document.documentElement.style.setProperty('--text-secondary-color', 'white');
-    document.documentElement.style.setProperty('--primary-color', '#121212');
-    document.documentElement.style.setProperty('--pagination-active-text', 'white');
-    modoNocheBtnIcon.classList.replace("icon-moon", "icon-moon-disable");
-    modoNocheActivado = "true";
-    localStorage.setItem("modoNocheActivado", modoNocheActivado);
-  }
-});
 
 
