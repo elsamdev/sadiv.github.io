@@ -197,9 +197,9 @@ function showPage(page) {
   // Calcula el índice inicial y final de las cards a mostrar
   console.log(page+ " " +totalPages)
   if(page == 1){
-    previousLink.classList.add('active');
+    previousLink.classList.add('disabled');
   }else if(page == totalPages ){
-    nextLink.classList.add('active');
+    nextLink.classList.add('disabled');
   }
   const startIndex = (page - 1) * cardsPerPage;
   const endIndex = page * cardsPerPage;
@@ -275,39 +275,41 @@ function updatePageParam(page) {
 
 // modo noche
 
-
 var modoNocheBtn = document.getElementById("modoNocheBtn");
-var body = document.body;
-var html = document.documentElement;
-var menuItems = document.getElementsByClassName("menu-items");
-var searcItems = document.getElementsByClassName("search-container")
+var modoNocheBtnIcon = document.getElementsByClassName("mdnicon")[0];
 // Verificar el estado del modo noche en el almacenamiento local
 var modoNocheActivado = localStorage.getItem("modoNocheActivado");
 
 // Si existe un estado guardado, aplicar el modo noche
 if (modoNocheActivado === "true") {
-  for (var i = 0; i < menuItems.length; i++) {
-    menuItems[i].classList.add("modoNoche-secundario");
-    
-  }
-  for (var i = 0; i < searcItems.length; i++) {
-    searcItems[i].classList.toggle("modoNoche-secundario");
-  }
-    body.classList.toggle("modoNoche");
-    html.classList.toggle("modoNoche");
+  document.documentElement.style.setProperty('--background', '#252525');
+  document.documentElement.style.setProperty('--text-secondary-color', 'white');
+  document.documentElement.style.setProperty('--primary-color', '#121212');
+  document.documentElement.style.setProperty('--pagination-active-text', 'white');
+  modoNocheBtnIcon.classList.replace("icon-moon", "icon-moon-disable");
+} else {
+  localStorage.removeItem("modoNocheActivado");
 }
 
 modoNocheBtn.addEventListener("click", function() {
   // Alternar la clase y guardar el estado en el almacenamiento local
-  html.classList.toggle("modoNoche");
-  body.classList.toggle("modoNoche");
-  modoNocheActivado = body.classList.contains("modoNoche");
-  for (var i = 0; i < menuItems.length; i++) {
-    menuItems[i].classList.toggle("modoNoche-secundario");
+  if (modoNocheActivado === "true") {
+    document.documentElement.style.setProperty('--background', null);
+    document.documentElement.style.setProperty('--text-secondary-color', null);
+    document.documentElement.style.setProperty('--primary-color', null);
+    document.documentElement.style.setProperty('--pagination-active-text', null);
+    modoNocheBtnIcon.classList.replace("icon-moon-disable", "icon-moon");
+    modoNocheActivado = "false";
+    localStorage.removeItem("modoNocheActivado");
+  } else {
+    document.documentElement.style.setProperty('--background', '#252525');
+    document.documentElement.style.setProperty('--text-secondary-color', 'white');
+    document.documentElement.style.setProperty('--primary-color', '#121212');
+    document.documentElement.style.setProperty('--pagination-active-text', 'white');
+    modoNocheBtnIcon.classList.replace("icon-moon", "icon-moon-disable");
+    modoNocheActivado = "true";
+    localStorage.setItem("modoNocheActivado", modoNocheActivado);
   }
-
-  for (var i = 0; i < searcItems.length; i++) {
-    searcItems[i].classList.toggle("modoNoche-secundario");
-  }
-  localStorage.setItem("modoNocheActivado", modoNocheActivado);
 });
+
+

@@ -10,12 +10,14 @@
   --pumpkin-800: #a1400b;
   --pumpkin-900: #82370c;
   --pumpkin-950: #461904;
-  --background-light: #f2f2f2;
+  --background: #f2f2f2;
   --background-dark: #252525;
   --primary-color: white;
   --primary-color-dark: #121212;
   --text-primary-color: white;
-
+  --text-secondary-color: black;
+  --pagination-active-text:#333333;
+  --pagination-active-border:#dddddd;
 }
 
 * {
@@ -26,7 +28,7 @@
 }
 body,
 html {
-  background-color: var(--background-light);
+  background-color: var(--background);
   scroll-behavior: smooth;
 }
 
@@ -154,6 +156,7 @@ a {
   background-color: var(--primary-color);
   padding: 15px;
   padding-left: 30px;
+  color: var(--text-secondary-color);
 }
 .close-btn {
   background: none;
@@ -514,12 +517,13 @@ a {
 }
 
 .pagination a {
-  color: #333333;
+  color: var(--pagination-active-text);
   text-decoration: none;
   padding: 8px 16px;
   border: 1px solid #dddddd;
   border-radius: 4px;
   margin: 0 4px;
+
 }
 
 .pagination a:hover {
@@ -527,7 +531,7 @@ a {
 }
 
 .pages .page {
-  color: #333333;
+  color: var(--pagination-active-text);
 }
 
 .pages .page.active {
@@ -536,13 +540,11 @@ a {
   background-color: var(--pumpkin-500);
 }
 
-.bbtns a.active{
+.bbtns a.disabled{
   color: #949393;
-}
-
-.bbtns a.active {
   background-color: transparent;
 }
+
 .hide {
   display: none;
 }
@@ -567,12 +569,7 @@ a {
 }
 
 
-.modoNoche {
-   background-color: var(--background-dark);
-}
 
-.modoNoche-secundario {
-  background-color: var(--primary-color-dark);
-  color: var(--text-primary-color);
-}
+
+
 
