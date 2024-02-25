@@ -316,5 +316,15 @@ function updatePageParam(page) {
 }
 
 
+////cortar letras
+const postTitles = document.querySelectorAll('.vote-info p');
 
+postTitles.forEach(title => {
+  const maxLength = 30; // Establece el límite máximo de letras
+  const text = title.textContent;
+  if (text.length > maxLength) {
+    const truncatedText = text.slice(0, maxLength) + '...';
+    title.textContent = truncatedText;
+  }
+});
 
